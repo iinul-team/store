@@ -19,7 +19,7 @@ jobs:
       - run: npm i -g zx
       - run: ./scripts/generate-store.mjs
         env:
-          AIRTABLE_API_URL: ${{ secrets.AIRTABLE_API_URL }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
