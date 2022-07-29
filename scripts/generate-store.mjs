@@ -7,7 +7,7 @@ let resp = await fetch(
       Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
     },
   }
-).then((r) => JSON.json());
+).then((r) => r.json());
 
 const currated = resp.filter((e) => !!e.is_confirmed);
 await fs.writeJSON("build/store.json", currated);
